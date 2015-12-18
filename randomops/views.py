@@ -9,11 +9,11 @@ from django import forms
 
 
 class PlayerNames(forms.Form):
-    player1 = forms.CharField(label='Player 1', max_length=100)
-    player2 = forms.CharField(label='Player 2', max_length=100)
-    player3 = forms.CharField(label='Player 3', max_length=100)
-    player4 = forms.CharField(label='Player 4', max_length=100)
-    player5 = forms.CharField(label='Player 5', max_length=100)
+    player1 = forms.CharField(label='Player 1', initial='Player 1', max_length=100)
+    player2 = forms.CharField(label='Player 2', initial='Player 2', max_length=100)
+    player3 = forms.CharField(label='Player 3', initial='Player 3', max_length=100)
+    player4 = forms.CharField(label='Player 4', initial='Player 4', max_length=100)
+    player5 = forms.CharField(label='Player 5', initial='Player 5', max_length=100)
     side = forms.ChoiceField(choices=(('Attacker', 'Attacker'), ('Defender', 'Defenders')), initial='Attacker')
 
 
@@ -23,7 +23,7 @@ def index(request):
         # create a form instance and populate it with data from the request:
         form = PlayerNames(request.POST)
         # check whether it's valid:
-        if form.is_valid():
+        if form.is_valid() or not form.is_valid():
             # process the data in form.cleaned_data as required # ...
             # redirect to a new URL:
             # return HttpResponseRedirect('/randomops/')
