@@ -36,8 +36,10 @@ def index(request):
                 rand_user = random.choice(users)
                 rand_op = random.choice(ops)
                 if len(users) > 0 and rand_user:
-                    assignments[rand_user] = rand_op
-                    users.remove(rand_user)
+                    assignments['Player %s - %s' % (i, rand_user)] = rand_op
+                    element = users.index(rand_user)
+                    del users[element]
+                    # users.remove(rand_user)
                 else:
                     assignments['Player%s' % i] = rand_op
                 ops.remove(rand_op)

@@ -3,7 +3,7 @@ Welcome to our Operator picker!
 {% include "r6ops/names_form.html" with form=form %}
 <br/>
 {% for u, value in assignments.items %}
- <div style='float:left;text-align:center;border:1px 1px solid black;width:20%;'>{{ u }}<br/><img src="{{ value.logos }}" width="100px"></img><br/>{{ value }}<br/><img src="{{ value.portraits }}" width="275px"></img></div>
+ <div style='float:left;text-align:center;border:1px 1px solid black;width:20%;'>{{ u }}<br/><img src="{{ value.logo }}" width="100px"></img><br/>{{ value }}<br/><img src="{{ value.portrait }}" width="275px"></img></div>
 {% endfor %}
 
 </body>
